@@ -4,6 +4,8 @@ A responsive **personal finance management web app** built using **HTML, CSS, an
 It helps users track **income, expenses, and investments** while visualizing financial data using **Chart.js**.  
 All data is stored locally with **LocalStorage**, so there’s no backend setup required.
 
+Live Site: https://anika57.github.io/Scorewise_Finance_Tracker/
+
 ---
 
 ## 🚀 Features
