@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Finance Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Personal Finance Dashboard</h1>
+    </header>
+
+    <!-- Dashboard Summary -->
+    <section class="dashboard-grid">
+      <div class="card">
+        <h3>Total Balance</h3>
+        <p>₹<span id="totalBalance">0</span></p>
+      </div>
+      <div class="card">
+        <h3>Monthly Income</h3>
+        <p>₹<span id="income">0</span></p>
+      </div>
+      <div class="card">
+        <h3>Expenses</h3>
+        <p>₹<span id="expenses">0</span></p>
+      </div>
+      <div class="card">
+        <h3>Investments</h3>
+        <p>₹<span id="investments">0</span></p>
+      </div>
+    </section>
+
+    <!-- Transaction Form -->
+    <form id="transactionForm" autocomplete="off">
+      <input type="text" id="desc" placeholder="Description" required />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="category">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+        <option value="investment">Investment</option>
+      </select>
+      <input type="date" id="date" required />
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <!-- Filters -->
+    <div class="table-controls">
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+        <option value="investment">Investment</option>
+      </select>
+      <select id="sortFilter">
+        <option value="none">Sort by</option>
+        <option value="asc">Amount ↑</option>
+        <option value="desc">Amount ↓</option>
+      </select>
+    </div>
+
+    <!-- Transaction Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="transactionList"></tbody>
+    </table>
+
+    <!-- Charts Section -->
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Expense Breakdown</h3>
+        <canvas id="expenseChart" width="400" height="350"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Monthly Trend</h3>
+        <canvas id="trendChart" width="400" height="350"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Income vs Expenses</h3>
+        <canvas id="incomeVsExpense" width="400" height="350"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
